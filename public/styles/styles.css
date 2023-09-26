@@ -1,0 +1,8 @@
+body{
+    background-color:aliceblue;
+}
+
+footer{
+    position: fixed;
+    bottom: 3px;
+}
