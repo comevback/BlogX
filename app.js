@@ -1,15 +1,22 @@
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import {mongoUrl} from "./config.js";
 
 const app = express();
 const port = 3000;
-const mongoUrl = "mongodb+srv://xuxiang5012:986532xx@cluster0.xvxt0us.mongodb.net/todoList?retryWrites=true&w=majority";
-
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
-mongoose.connect(mongoUrl).then(console.log(`Connected to mongoDB.`));
+app.set("view engine", "ejs");
+
+mongoose.connect(mongoUrl)
+.then(() => {
+    console.log(`Connected to MongoDB.`);
+})
+.catch(error => {
+    console.error(`MongoDB connection error: ${error}`);
+});
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}.`);
