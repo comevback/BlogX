@@ -57,6 +57,18 @@ footer{
     margin: 0;
 }
 
+button{
+    border-radius: 5px;
+    border: 1px solid #DAC0A3;
+    font-size: 15px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #DAC0A3;
+    color: white;
+  }
+
 .bottons{
     display: flex;
     gap: 20px;
