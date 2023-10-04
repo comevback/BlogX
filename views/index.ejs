@@ -1,4 +1,5 @@
 <%- include("partials/headers.ejs") %>
+    <a class="new-art" href="/add">New Article</a>
     <div class="articles-container">
         <% if(locals.articles){ %>
             <% articles.forEach((article)=> { %>
@@ -21,7 +22,7 @@
                 </div>
                 <% })} %>
     </div>
-    <form action="/add" method="GET">
+    <!--<form action="/add" method="GET">
         <button class="new-art" type="submit" name="get">New Article</button>
-    </form>
+    </form>-->
     <%- include("partials/footers.ejs") %>
