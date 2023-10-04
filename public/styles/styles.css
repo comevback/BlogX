@@ -1,8 +1,108 @@
 body{
-    background-color:aliceblue;
+    background-color:#F8F0E5;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    height:100%
+}
+
+h1{
+    margin: 40px;
+}
+
+.header{
+    background-color: #EADBC8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+}
+
+.menu{
+    margin: 40px;
+    gap: 50px;
 }
 
 footer{
-    position: fixed;
-    bottom: 3px;
+    position:fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    background-color: #EADBC8;
+}
+
+.articles-container{
+    margin-left: 1rem;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.articles{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-bottom: 1px solid #DAC0A3;
+}
+
+.articles-show{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 10px;
+    padding: 2rem;
+}
+
+.title{
+    margin: 0;
+}
+
+.bottons{
+    display: flex;
+    gap: 20px;
+}
+
+.add{
+    margin: 2rem;
+}
+
+.edit{
+    margin: 2rem;
+}
+
+.addForm{
+    display: grid;
+    grid-template-columns: 150px 600px;
+    gap: 10px;
+}
+
+label{
+    font-size: 25px;
+}
+
+.add-col{
+    display: flex;
+}
+
+.input-title{
+    width: 16rem;
+    height: 3rem;
+    font-size: 20px;
+}
+
+.input-article{
+    width: 60rem;
+    height: 30rem;
+    font-size: 20px;
+}
+
+.input-btn{
+    font-size: 20px;
+}
+
+.new-art{
+    margin: 2rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+    font-size: 20px;
 }

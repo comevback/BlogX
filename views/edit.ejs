@@ -1,0 +1,13 @@
+<%- include("partials/headers.ejs") %>
+    <div class="edit">
+        <form class="addForm" action="/edit" method="POST">
+            <label for="title">Title </label>
+            <input class="input-title" name="title" type="text" placeholder="Title" value="<%= article.title %>">
+            <label for="article">Article </label>
+            <textarea class="input-article" name="article" type="text"
+                placeholder="Article"><%= article.article %></textarea>
+            <div></div>
+            <button class="input-btn" type="submit" name="id" value="<%= article._id %>">Compete</button>
+        </form>
+    </div>
+    <%- include("partials/footers.ejs") %>

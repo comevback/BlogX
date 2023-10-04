@@ -1,0 +1,18 @@
+<%- include("partials/headers.ejs") %>
+    <div class="articles-show">
+        <h2 class="title">
+            <%= article.title %>
+        </h2>
+        <p>
+            <%= article.article %>
+        </p>
+        <div class="bottons">
+            <form action="/edit" method="GET">
+                <button type="submit" name="edit" value="<%= article._id %>">Edit</button>
+            </form>
+            <form action="/delete" method="POST">
+                <button type="submit" name="delete" value="<%= article._id %>">Delete</button>
+            </form>
+        </div>
+    </div>
+    <%- include("partials/footers.ejs") %>

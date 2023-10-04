@@ -1,3 +1,27 @@
 <%- include("partials/headers.ejs") %>
-    <h1>BlogX</h1>
+    <div class="articles-container">
+        <% if(locals.articles){ %>
+            <% articles.forEach((article)=> { %>
+                <div class="articles">
+                    <h2 class="title">
+                        <%= article.title %>
+                    </h2>
+                    <p>
+                        <% article.article=article.article.slice(0, 300) + '\n...' %>
+                            <%= article.article %>
+                    </p>
+                    <div class="bottons">
+                        <form action="/show" method="POST">
+                            <button type="submit" name="show" value="<%= article._id %>">Read More</button>
+                        </form>
+                        <form action="/delete" method="POST">
+                            <button type="submit" name="delete" value="<%= article._id %>">Delete</button>
+                        </form>
+                    </div>
+                </div>
+                <% })} %>
+    </div>
+    <form action="/add" method="GET">
+        <button class="new-art" type="submit" name="get">New Article</button>
+    </form>
     <%- include("partials/footers.ejs") %>
