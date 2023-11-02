@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import {mongoUrl} from "./config.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -9,8 +11,10 @@ const port = 3000;
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+//import and setting
 
-mongoose.connect(mongoUrl)
+
+mongoose.connect(process.env.MongoURL)
 .then(() => {
     console.log(`Connected to MongoDB.`);
 })
@@ -30,7 +34,7 @@ const examArt = new Articles({
 });
 
 let articles = await Articles.find({});
-//console.log(articles);
+//mongoDB setting
 
 
 app.listen(port, () => {
